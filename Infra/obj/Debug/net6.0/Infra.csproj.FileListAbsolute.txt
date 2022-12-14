@@ -1,0 +1,15 @@
+C:\Users\Matheus\Desktop\Caderno\api\Infra\bin\Debug\net6.0\Infra.deps.json
+c:\Users\Matheus\Desktop\Caderno\api\Infra\bin\Debug\net6.0\Infra.dll
+c:\Users\Matheus\Desktop\Caderno\api\Infra\bin\Debug\net6.0\Infra.pdb
+c:\Users\Matheus\Desktop\Caderno\api\Infra\bin\Debug\net6.0\Domain.dll
+c:\Users\Matheus\Desktop\Caderno\api\Infra\bin\Debug\net6.0\Domain.pdb
+c:\Users\Matheus\Desktop\Caderno\api\Infra\obj\Debug\net6.0\Infra.csproj.AssemblyReference.cache
+c:\Users\Matheus\Desktop\Caderno\api\Infra\obj\Debug\net6.0\Infra.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\Matheus\Desktop\Caderno\api\Infra\obj\Debug\net6.0\Infra.AssemblyInfoInputs.cache
+c:\Users\Matheus\Desktop\Caderno\api\Infra\obj\Debug\net6.0\Infra.AssemblyInfo.cs
+c:\Users\Matheus\Desktop\Caderno\api\Infra\obj\Debug\net6.0\Infra.csproj.CoreCompileInputs.cache
+C:\Users\Matheus\Desktop\Caderno\api\Infra\obj\Debug\net6.0\Infra.csproj.CopyComplete
+c:\Users\Matheus\Desktop\Caderno\api\Infra\obj\Debug\net6.0\Infra.dll
+c:\Users\Matheus\Desktop\Caderno\api\Infra\obj\Debug\net6.0\refint\Infra.dll
+c:\Users\Matheus\Desktop\Caderno\api\Infra\obj\Debug\net6.0\Infra.pdb
+C:\Users\Matheus\Desktop\Caderno\api\Infra\obj\Debug\net6.0\ref\Infra.dll
