@@ -12,10 +12,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 
 var config = new MapperConfiguration(cfg => {
-    cfg.CreateMap<User, GetUserDto>();
-    cfg.CreateMap<GetUserDto, User>();
-    cfg.CreateMap<User, FoundUserDto>();
-    cfg.CreateMap<FoundUserDto, User>();
+    
+    cfg.AddMaps("Domain");
 });
 
 var mapper = config.CreateMapper();

@@ -18,18 +18,31 @@ public class UserController : ControllerBase
 
     [HttpGet]
     [Route("{Id}")]
-    public async Task<IActionResult> GetById([FromRoute] GetUserDto getUserDto)
+    public async Task<IActionResult> GetById([FromRoute] GetByIdUserDto getUserDto)
     {
         try
         {
-            var foundUser = await _userService.GetById(getUserDto);
-            return Ok(foundUser);
+            return Ok(await _userService.GetById<GetByIdUserDto, FoundUserDto>(getUserDto));
         }
         catch (System.Exception)
         {
             return BadRequest();
             throw;
             // TODO: Tratamento de erros de requisição;
+        }
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> List([FromQuery] ListUserDto listUserDto) 
+    {
+        try
+        {
+            return Ok(await _userService.List<ListUserDto, ListedUserDto>(listUserDto));
+        }
+        catch (System.Exception)
+        {
+            return BadRequest();
+            throw;
         }
     }
 }
