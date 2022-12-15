@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\Matheus\\Desktop\\Caderno\\api\\Application\\Application.csproj": {}
+    "C:\\Users\\Matheus\\Desktop\\Caderno\\api\\Application\\Application.csproj": {}
   },
   "projects": {
-    "c:\\Users\\Matheus\\Desktop\\Caderno\\api\\Application\\Application.csproj": {
+    "C:\\Users\\Matheus\\Desktop\\Caderno\\api\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\Matheus\\Desktop\\Caderno\\api\\Application\\Application.csproj",
+        "projectUniqueName": "C:\\Users\\Matheus\\Desktop\\Caderno\\api\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "c:\\Users\\Matheus\\Desktop\\Caderno\\api\\Application\\Application.csproj",
+        "projectPath": "C:\\Users\\Matheus\\Desktop\\Caderno\\api\\Application\\Application.csproj",
         "packagesPath": "C:\\Users\\Matheus\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\Matheus\\Desktop\\Caderno\\api\\Application\\obj\\",
+        "outputPath": "C:\\Users\\Matheus\\Desktop\\Caderno\\api\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Matheus\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -104,6 +104,12 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[12.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

@@ -21,7 +21,7 @@ public class Repository<T> : IRepository<T>
         return await _dbContext.Set<T>().FindAsync(entity.Id);
     }
 
-    public async virtual Task<IEnumerable<T>> List()
+    public async virtual Task<IEnumerable<T>> List(T entity)
     {
         return await _dbContext.Set<T>().ToListAsync();
     }
@@ -53,4 +53,5 @@ public class Repository<T> : IRepository<T>
     {
         _dbContext.Set<T>().Remove(entity);
         await _dbContext.SaveChangesAsync();
-);
+    }
+}

@@ -8,7 +8,7 @@ public class UserConnectionRepository : Repository<UserConnection>, IUserConnect
 {
     private readonly ApplicationDbContext _dbContext;
 
-    UserConnectionRepository(ApplicationDbContext dbContext)
+    public UserConnectionRepository(ApplicationDbContext dbContext)
         : base(dbContext)
     {
         _dbContext = dbContext;

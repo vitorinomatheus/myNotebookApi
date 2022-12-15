@@ -30,4 +30,15 @@ public class GenericCrudService<T, Repository> : IGenericCrudService
         return foundDto;
     }
 
+    public async virtual Task<IEnumerable<OutputDto>> List<InputDto, OutputDto>(InputDto inputDto)
+    {
+        var listEntity = _mapper.Map<T>(inputDto);
+
+        var listedEntities = await _repository.List(listEntity);
+
+        var listedDtos = _mapper.Map<IEnumerable<OutputDto>>(listedEntities);
+
+        return listedDtos;
+    }
+
 }

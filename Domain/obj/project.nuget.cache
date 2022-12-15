@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "Owe9KU92vIehP9uYxwOyzatIQJUgWslKjEl4SE3hDUhAdFMOE/OaU5vOjqxGYTcJhLltSEx7AfLPQkyHGrQIyg==",
+  "dgSpecHash": "BIo0VOrMheBDw/hl2BMzc8xjcfZmVyFeFzdCkDYclpLuEHGgz13yRTt6LjHnC9yikg6nU/hl1inKud5onEkS3A==",
   "success": true,
   "projectFilePath": "C:\\Users\\Matheus\\Desktop\\Caderno\\api\\Domain\\Domain.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Matheus\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
+    "C:\\Users\\Matheus\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512"
+  ],
   "logs": []
 }

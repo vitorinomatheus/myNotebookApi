@@ -8,7 +8,7 @@ public class UserRepository : Repository<User>, IUserRepository
 {
     private readonly ApplicationDbContext _dbContext;
 
-    UserRepository(ApplicationDbContext dbContext) : 
+    public UserRepository(ApplicationDbContext dbContext) : 
         base(dbContext)
     {
         _dbContext = dbContext;

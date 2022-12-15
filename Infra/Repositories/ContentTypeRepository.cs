@@ -8,7 +8,7 @@ public class ContentTypeRepository : Repository<ContentType>, IContentTypeReposi
 {
     private readonly ApplicationDbContext _dbContext;
 
-    ContentTypeRepository(ApplicationDbContext dbContext)
+    public ContentTypeRepository(ApplicationDbContext dbContext)
         : base(dbContext)
     {
         _dbContext = dbContext;

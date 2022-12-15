@@ -8,7 +8,7 @@ public class NotebookRepository : Repository<Notebook>, INotebookRepository
 {
     private readonly ApplicationDbContext _dbContext;
 
-    NotebookRepository(ApplicationDbContext dbContext)
+    public NotebookRepository(ApplicationDbContext dbContext)
         : base(dbContext)
     {
         _dbContext = dbContext;

@@ -5,6 +5,8 @@ public interface IGenericCrudService
 
    Task<OutputDto> GetById<InputDto, OutputDto>(InputDto inputDto);
 
+   Task<IEnumerable<OutputDto>> List<InputDto,OutputDto>(InputDto inputDto);
+
  /*
     Receber InputDto vindo da controller, então
     mudar o <T>. Os métodos crud deverão converter

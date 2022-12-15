@@ -6,12 +6,13 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v6.0": {
-      "Domain/1.0.0": {
+      "Application/1.0.0": {
         "dependencies": {
-          "AutoMapper": "12.0.0"
+          "AutoMapper": "12.0.0",
+          "Domain": "1.0.0"
         },
         "runtime": {
-          "Domain.dll": {}
+          "Application.dll": {}
         }
       },
       "AutoMapper/12.0.0": {
@@ -25,11 +26,19 @@
           }
         }
       },
-      "Microsoft.CSharp/4.7.0": {}
+      "Microsoft.CSharp/4.7.0": {},
+      "Domain/1.0.0": {
+        "dependencies": {
+          "AutoMapper": "12.0.0"
+        },
+        "runtime": {
+          "Domain.dll": {}
+        }
+      }
     }
   },
   "libraries": {
-    "Domain/1.0.0": {
+    "Application/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -47,6 +56,11 @@
       "sha512": "sha512-pTj+D3uJWyN3My70i2Hqo+OXixq3Os2D1nJ2x92FFo6sk8fYS1m1WLNTs0Dc1uPaViH0YvEEwvzddQ7y4rhXmA==",
       "path": "microsoft.csharp/4.7.0",
       "hashPath": "microsoft.csharp.4.7.0.nupkg.sha512"
+    },
+    "Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

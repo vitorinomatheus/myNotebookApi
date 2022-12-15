@@ -5,9 +5,9 @@ namespace Domain.Interfaces;
 
 public interface IRepository<T> where T : EntityBase
 {
-    Task<T> GetById(int id);
+    Task<T> GetById(T entity);
 
-    Task<IEnumerable<T>> List();
+    Task<IEnumerable<T>> List(T entity);
 
     Task<IEnumerable<T>> List(Expression<Func<T, bool>> predicate);
 
