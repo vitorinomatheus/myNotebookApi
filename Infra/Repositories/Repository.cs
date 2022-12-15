@@ -33,10 +33,13 @@ public class Repository<T> : IRepository<T>
                 .ToListAsync();
     }
 
-    public async void Insert(T entity)
+    public async Task<T> Insert(T entity)
     {
-        await _dbContext.Set<T>().AddAsync(entity);
+        var insertedEntity = await _dbContext.Set<T>().AddAsync(entity);
+
         await _dbContext.SaveChangesAsync();
+
+        return insertedEntity.Entity;
     }
 
     public async void Update(T entity)

@@ -1707,14 +1707,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Matheus\\Desktop\\Caderno\\api\\Application\\Application.csproj": {
-              "projectPath": "C:\\Users\\Matheus\\Desktop\\Caderno\\api\\Application\\Application.csproj"
+            "c:\\Users\\Matheus\\Desktop\\Caderno\\api\\Application\\Application.csproj": {
+              "projectPath": "c:\\Users\\Matheus\\Desktop\\Caderno\\api\\Application\\Application.csproj"
             },
-            "C:\\Users\\Matheus\\Desktop\\Caderno\\api\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\Users\\Matheus\\Desktop\\Caderno\\api\\Domain\\Domain.csproj"
+            "c:\\Users\\Matheus\\Desktop\\Caderno\\api\\Domain\\Domain.csproj": {
+              "projectPath": "c:\\Users\\Matheus\\Desktop\\Caderno\\api\\Domain\\Domain.csproj"
             },
-            "C:\\Users\\Matheus\\Desktop\\Caderno\\api\\Infra\\Infra.csproj": {
-              "projectPath": "C:\\Users\\Matheus\\Desktop\\Caderno\\api\\Infra\\Infra.csproj"
+            "c:\\Users\\Matheus\\Desktop\\Caderno\\api\\Infra\\Infra.csproj": {
+              "projectPath": "c:\\Users\\Matheus\\Desktop\\Caderno\\api\\Infra\\Infra.csproj"
             }
           }
         }

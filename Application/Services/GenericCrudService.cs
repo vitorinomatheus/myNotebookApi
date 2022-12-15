@@ -41,4 +41,15 @@ public class GenericCrudService<T, Repository> : IGenericCrudService
         return listedDtos;
     }
 
+    public async virtual Task<OutputDto> Insert<InputDto, OutputDto>(InputDto inputDto)
+    {
+        var createEntity = _mapper.Map<T>(inputDto);
+
+        var createdEntity = await _repository.Insert(createEntity);
+
+        var createdDto = _mapper.Map<OutputDto>(createdEntity);
+
+        return createdDto;
+    }
+
 }

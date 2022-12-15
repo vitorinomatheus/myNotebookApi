@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "As95y+ZT5/cFPtQzwjta7i77l7O5rRpKB+jhfaHyiUtReHwYHUlDudwCUWOwP+B1S6ran2WT+EXJ1hcU6NClCA==",
+  "dgSpecHash": "vlfQ+QGEkgMmxMS/b6oS4SZN0QB+uSlOdVbpg8YNruUS+p1vXhAA5st+VT4OEB0kIwTW/oNzOaezhohv3ukHdw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Matheus\\Desktop\\Caderno\\api\\Infra\\Infra.csproj",
+  "projectFilePath": "c:\\Users\\Matheus\\Desktop\\Caderno\\api\\Infra\\Infra.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Matheus\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\Matheus\\.nuget\\packages\\google.protobuf\\3.19.4\\google.protobuf.3.19.4.nupkg.sha512",

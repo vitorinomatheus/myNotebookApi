@@ -45,4 +45,18 @@ public class UserController : ControllerBase
             throw;
         }
     }
+
+    [HttpPost]
+    public async Task<IActionResult> Insert([FromBody] CreateUserDto createUserDto)
+    {
+        try
+        {
+            return Ok(await _userService.Insert<CreateUserDto, CreatedUserDto>(createUserDto));
+        }
+        catch (System.Exception)
+        {
+            return BadRequest();
+            throw;
+        }
+    }
 }

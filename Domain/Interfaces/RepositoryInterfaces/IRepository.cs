@@ -11,7 +11,7 @@ public interface IRepository<T> where T : EntityBase
 
     Task<IEnumerable<T>> List(Expression<Func<T, bool>> predicate);
 
-    void Insert(T entity);
+    Task<T> Insert(T entity);
 
     void Delete(T entity);
 
