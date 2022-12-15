@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\Matheus\\Desktop\\Caderno\\api\\Infra\\Infra.csproj": {}
+    "C:\\Users\\Matheus\\Desktop\\Caderno\\api\\Infra\\Infra.csproj": {}
   },
   "projects": {
-    "c:\\Users\\Matheus\\Desktop\\Caderno\\api\\Domain\\Domain.csproj": {
+    "C:\\Users\\Matheus\\Desktop\\Caderno\\api\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\Matheus\\Desktop\\Caderno\\api\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Matheus\\Desktop\\Caderno\\api\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "c:\\Users\\Matheus\\Desktop\\Caderno\\api\\Domain\\Domain.csproj",
+        "projectPath": "C:\\Users\\Matheus\\Desktop\\Caderno\\api\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\Matheus\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\Matheus\\Desktop\\Caderno\\api\\Domain\\obj\\",
+        "outputPath": "C:\\Users\\Matheus\\Desktop\\Caderno\\api\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Matheus\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -65,14 +65,14 @@
         }
       }
     },
-    "c:\\Users\\Matheus\\Desktop\\Caderno\\api\\Infra\\Infra.csproj": {
+    "C:\\Users\\Matheus\\Desktop\\Caderno\\api\\Infra\\Infra.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\Matheus\\Desktop\\Caderno\\api\\Infra\\Infra.csproj",
+        "projectUniqueName": "C:\\Users\\Matheus\\Desktop\\Caderno\\api\\Infra\\Infra.csproj",
         "projectName": "Infra",
-        "projectPath": "c:\\Users\\Matheus\\Desktop\\Caderno\\api\\Infra\\Infra.csproj",
+        "projectPath": "C:\\Users\\Matheus\\Desktop\\Caderno\\api\\Infra\\Infra.csproj",
         "packagesPath": "C:\\Users\\Matheus\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\Matheus\\Desktop\\Caderno\\api\\Infra\\obj\\",
+        "outputPath": "C:\\Users\\Matheus\\Desktop\\Caderno\\api\\Infra\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Matheus\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -89,8 +89,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "c:\\Users\\Matheus\\Desktop\\Caderno\\api\\Domain\\Domain.csproj": {
-                "projectPath": "c:\\Users\\Matheus\\Desktop\\Caderno\\api\\Domain\\Domain.csproj"
+              "C:\\Users\\Matheus\\Desktop\\Caderno\\api\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\Matheus\\Desktop\\Caderno\\api\\Domain\\Domain.csproj"
               }
             }
           }

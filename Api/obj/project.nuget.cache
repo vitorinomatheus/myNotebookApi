@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "hDVa1Jzd5rrmTPEUSR/vEmr4qHM9d3o8dkn/JWwlUQF4HTCd8L3EIc39LG09csJP0oQilipBfkFXvdYNumKcwg==",
+  "dgSpecHash": "+Ld6PYMpFuI+LwzrPxFc84yv5v0KK3B9iZvrYBBZMfnqWzKo6KsJ0vg9P31uaRafj3VmH+17VEBBQtDGHb64vA==",
   "success": true,
-  "projectFilePath": "c:\\Users\\Matheus\\Desktop\\Caderno\\api\\Api\\Api.csproj",
+  "projectFilePath": "C:\\Users\\Matheus\\Desktop\\Caderno\\api\\Api\\Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Matheus\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\Matheus\\.nuget\\packages\\google.protobuf\\3.19.4\\google.protobuf.3.19.4.nupkg.sha512",

@@ -42,19 +42,24 @@ public class Repository<T> : IRepository<T>
         return insertedEntity.Entity;
     }
 
-    public async void Update(T entity)
+    public async Task<T> Update(T entity)
     {
-        _dbContext.Update(entity);
+        var updatedEntity = _dbContext.Update(entity);
         await _dbContext.SaveChangesAsync();
+
+        return updatedEntity.Entity;
 
         // Study the differences between the two methods and decide which one to use here
         // _dbContext.Entry(entity).State = EntityState.Modified;
         // _dbContext.SaveChanges();
     }
 
-    public async void Delete(T entity)
+    public async Task<T> Delete(T entity)
     {
-        _dbContext.Set<T>().Remove(entity);
+        var deletedEntity = _dbContext.Set<T>().Remove(entity);
+
         await _dbContext.SaveChangesAsync();
+
+        return deletedEntity.Entity;
     }
 }

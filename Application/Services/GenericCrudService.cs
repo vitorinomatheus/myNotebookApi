@@ -52,4 +52,26 @@ public class GenericCrudService<T, Repository> : IGenericCrudService
         return createdDto;
     }
 
+    public async virtual Task<OutputDto> Delete<InputDto, OutputDto>(InputDto inputDto)
+    {
+        var deleteEntity = _mapper.Map<T>(inputDto);
+
+        var deletedEntity = await _repository.Delete(deleteEntity);
+
+        var deletedDto = _mapper.Map<OutputDto>(deletedEntity);
+
+        return deletedDto;
+    }
+
+    public async virtual Task<OutputDto> Update<InputDto, OutputDto>(InputDto inputDto)
+    {
+        var updateEntity = _mapper.Map<T>(inputDto);
+
+        var updatedEntity = await _repository.Update(updateEntity);
+        
+        var updatedDto = _mapper.Map<OutputDto>(updatedEntity);
+
+        return updatedDto;
+    }
+
 }

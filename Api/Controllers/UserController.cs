@@ -59,4 +59,35 @@ public class UserController : ControllerBase
             throw;
         }
     }
+
+    [HttpDelete]
+    [Route("{Id}")]
+    public async Task<IActionResult> Delete([FromRoute] DeleteUserDto deleteUserDto)
+    {
+        try
+        {
+            return Ok(await _userService.Delete<DeleteUserDto, DeletedUserDto>(deleteUserDto)); 
+        }
+        catch (System.Exception)
+        {
+            return BadRequest();
+            throw;
+        }
+    }
+
+    [HttpPut]
+    [Route("{Id}")]
+    public async Task<IActionResult> Update([FromRoute] int Id, [FromBody] UpdateUserDto updateUserDto)
+    {
+        updateUserDto.Id = Id;
+        try
+        {
+            return Ok(await _userService.Update<UpdateUserDto, UpdatedUserDto>(updateUserDto));
+        }
+        catch (System.Exception)
+        {
+            return BadRequest();
+            throw;
+        }
+    }
 }

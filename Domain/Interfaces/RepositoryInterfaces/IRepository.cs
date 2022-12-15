@@ -13,8 +13,8 @@ public interface IRepository<T> where T : EntityBase
 
     Task<T> Insert(T entity);
 
-    void Delete(T entity);
+    Task<T> Delete(T entity);
 
-    void Update(T entity);
+    Task<T> Update(T entity);
 
 }
