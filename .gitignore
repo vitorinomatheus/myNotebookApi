@@ -1,2 +1,3 @@
 Infra/Data/ApplicationDbContext.cs
 Domain/Entities/
+Infra/Utils/HashPasswords.cs

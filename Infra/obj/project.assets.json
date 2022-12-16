@@ -387,6 +387,15 @@
           }
         }
       },
+      "Pbkdf2/1.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Pbkdf2.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/Pbkdf2.dll": {}
+        }
+      },
       "Portable.BouncyCastle/1.9.0": {
         "type": "package",
         "compile": {
@@ -1189,6 +1198,22 @@
         "mysql.entityframeworkcore.nuspec"
       ]
     },
+    "Pbkdf2/1.0.2": {
+      "sha512": "Sfo6tCQdKRYwcgy5Tinn22+Ky8g+efAeWlkQq7rSlOanFIjtH4b84o+y6DpLkkrnqYrIUx1/O5yvrGDq0NQXsQ==",
+      "type": "package",
+      "path": "pbkdf2/1.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Pbkdf2.png",
+        "README.md",
+        "lib/net40/Pbkdf2.dll",
+        "lib/net6.0/Pbkdf2.dll",
+        "lib/netstandard1.3/Pbkdf2.dll",
+        "pbkdf2.1.0.2.nupkg.sha512",
+        "pbkdf2.nuspec"
+      ]
+    },
     "Portable.BouncyCastle/1.9.0": {
       "sha512": "eZZBCABzVOek+id9Xy04HhmgykF0wZg9wpByzrWN7q8qEI0Qen9b7tfd7w8VA3dOeesumMG7C5ZPy0jk7PSRHw==",
       "type": "package",
@@ -1637,7 +1662,8 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "Domain >= 1.0.0",
-      "MySql.EntityFrameworkCore >= 6.0.7"
+      "MySql.EntityFrameworkCore >= 6.0.7",
+      "Pbkdf2 >= 1.0.2"
     ]
   },
   "packageFolders": {
@@ -1686,6 +1712,10 @@
           "MySql.EntityFrameworkCore": {
             "target": "Package",
             "version": "[6.0.7, )"
+          },
+          "Pbkdf2": {
+            "target": "Package",
+            "version": "[1.0.2, )"
           }
         },
         "imports": [
