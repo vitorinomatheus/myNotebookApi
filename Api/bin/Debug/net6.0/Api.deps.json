@@ -217,6 +217,14 @@
           }
         }
       },
+      "Pbkdf2/1.0.2": {
+        "runtime": {
+          "lib/net6.0/Pbkdf2.dll": {
+            "assemblyVersion": "1.0.2.0",
+            "fileVersion": "1.0.2.0"
+          }
+        }
+      },
       "Portable.BouncyCastle/1.9.0": {
         "runtime": {
           "lib/netstandard2.0/BouncyCastle.Crypto.dll": {
@@ -354,7 +362,8 @@
       "Infra/1.0.0": {
         "dependencies": {
           "Domain": "1.0.0",
-          "MySql.EntityFrameworkCore": "6.0.7"
+          "MySql.EntityFrameworkCore": "6.0.7",
+          "Pbkdf2": "1.0.2"
         },
         "runtime": {
           "Infra.dll": {}
@@ -528,6 +537,13 @@
       "sha512": "sha512-wjrO6ts+xYji32kwSX0tsPIzEEa7UM+h1UAx5O2OXy1eX10Gzpm8jPYMbNSJGnxQ2c2nrPoyPMIAba1yxbNmUQ==",
       "path": "mysql.entityframeworkcore/6.0.7",
       "hashPath": "mysql.entityframeworkcore.6.0.7.nupkg.sha512"
+    },
+    "Pbkdf2/1.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Sfo6tCQdKRYwcgy5Tinn22+Ky8g+efAeWlkQq7rSlOanFIjtH4b84o+y6DpLkkrnqYrIUx1/O5yvrGDq0NQXsQ==",
+      "path": "pbkdf2/1.0.2",
+      "hashPath": "pbkdf2.1.0.2.nupkg.sha512"
     },
     "Portable.BouncyCastle/1.9.0": {
       "type": "package",

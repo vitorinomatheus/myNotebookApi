@@ -50,3 +50,4 @@ C:\Users\Matheus\Desktop\Caderno\api\Api\bin\Debug\net6.0\Infra.dll
 C:\Users\Matheus\Desktop\Caderno\api\Api\bin\Debug\net6.0\Infra.pdb
 C:\Users\Matheus\Desktop\Caderno\api\Api\bin\Debug\net6.0\Application.pdb
 c:\Users\Matheus\Desktop\Caderno\api\Api\bin\Debug\net6.0\AutoMapper.dll
+C:\Users\Matheus\Desktop\Caderno\api\Api\bin\Debug\net6.0\Pbkdf2.dll

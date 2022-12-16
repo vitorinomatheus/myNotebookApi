@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "+Ld6PYMpFuI+LwzrPxFc84yv5v0KK3B9iZvrYBBZMfnqWzKo6KsJ0vg9P31uaRafj3VmH+17VEBBQtDGHb64vA==",
+  "dgSpecHash": "zCN/sFHdxpY5wIyCo/vuDEBH2Y67aUtCCDdERlfPNIq5jiYgnB9IWzQYsoEqIkiaWzy/gFuorsb9QahHpCt7Nw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Matheus\\Desktop\\Caderno\\api\\Api\\Api.csproj",
   "expectedPackageFiles": [
@@ -27,6 +27,7 @@
     "C:\\Users\\Matheus\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\Matheus\\.nuget\\packages\\mysql.data\\8.0.31\\mysql.data.8.0.31.nupkg.sha512",
     "C:\\Users\\Matheus\\.nuget\\packages\\mysql.entityframeworkcore\\6.0.7\\mysql.entityframeworkcore.6.0.7.nupkg.sha512",
+    "C:\\Users\\Matheus\\.nuget\\packages\\pbkdf2\\1.0.2\\pbkdf2.1.0.2.nupkg.sha512",
     "C:\\Users\\Matheus\\.nuget\\packages\\portable.bouncycastle\\1.9.0\\portable.bouncycastle.1.9.0.nupkg.sha512",
     "C:\\Users\\Matheus\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
     "C:\\Users\\Matheus\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
