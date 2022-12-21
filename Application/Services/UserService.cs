@@ -29,6 +29,12 @@ public class UserService : GenericCrudService<User, IUserRepository>, IUserServi
 
         await _hashPasswords.HashPassword(createdUser);
 
+        /*
+        Criar o caderno;
+
+        Chamar a service de criar caderno;
+        */
+
         var createdUserDto = _mapper.Map<OutputDto>(createdUser);
 
         return createdUserDto;

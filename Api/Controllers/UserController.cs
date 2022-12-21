@@ -37,7 +37,7 @@ public class UserController : ControllerBase
     {
         try
         {
-            return Ok(await _userService.List<ListUserDto, ListedUserDto>(listUserDto));
+            return Ok(await _userService.FilteredList<ListUserDto, ListedUserDto>(listUserDto));
         }
         catch (System.Exception)
         {

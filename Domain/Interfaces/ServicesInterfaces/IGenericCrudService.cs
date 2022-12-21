@@ -12,4 +12,6 @@ public interface IGenericCrudService
 
    Task<OutputDto> Delete<InputDto, OutputDto>(InputDto inputDto);
 
+   Task<IEnumerable<OutputDto>> FilteredList<InputDto, OutputDto>(InputDto inputDto);
+
  }

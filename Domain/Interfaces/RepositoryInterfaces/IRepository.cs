@@ -17,4 +17,6 @@ public interface IRepository<T> where T : EntityBase
 
     Task<T> Update(T entity);
 
+    Expression<Func<T, bool>> GetFilterPredicate(T entity);
+
 }

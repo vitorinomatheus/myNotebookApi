@@ -74,4 +74,17 @@ public class GenericCrudService<T, Repository> : IGenericCrudService
         return updatedDto;
     }
 
+    public async virtual Task<IEnumerable<OutputDto>> FilteredList<InputDto, OutputDto>(InputDto inputDto)
+    {
+        var filterListEntity = _mapper.Map<T>(inputDto);
+
+        var filterPredicate = _repository.GetFilterPredicate(filterListEntity);
+
+        var filterListedEntities = await _repository.List(filterPredicate);
+
+        var filterListedDtos = _mapper.Map<IEnumerable<OutputDto>>(filterListedEntities);
+
+        return filterListedDtos;
+    }
+
 }
