@@ -3,6 +3,7 @@ using Domain.Entities;
 using Infra.Data;
 using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage;
 
 namespace Infra.Repositories;
 
@@ -11,9 +12,28 @@ public class Repository<T> : IRepository<T>
 {
     private readonly ApplicationDbContext _dbContext;
 
+    private IDbContextTransaction _transaction;
+
     public Repository(ApplicationDbContext dbContext)
     {
         _dbContext = dbContext;
+    }
+
+    public async void BeginTransaction() 
+    {
+        _transaction = await _dbContext.Database.BeginTransactionAsync();
+    }
+
+    public async void CommitTransaction()
+    {
+        await _transaction.CommitAsync();
+        await _transaction.DisposeAsync();
+    }
+
+    public async void RollbackTransaction()
+    {
+        await _transaction.RollbackAsync();
+        await _transaction.DisposeAsync();
     }
 
     public async virtual Task<T> GetById(T entity)

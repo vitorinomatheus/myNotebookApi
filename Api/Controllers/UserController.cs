@@ -27,8 +27,6 @@ public class UserController : ControllerBase
         catch (System.Exception)
         {
             return BadRequest();
-            throw;
-            // TODO: Tratamento de erros de requisição;
         }
     }
 
@@ -42,7 +40,6 @@ public class UserController : ControllerBase
         catch (System.Exception)
         {
             return BadRequest();
-            throw;
         }
     }
 
@@ -56,7 +53,6 @@ public class UserController : ControllerBase
         catch (System.Exception)
         {
             return BadRequest();
-            throw;
         }
     }
 
@@ -71,7 +67,6 @@ public class UserController : ControllerBase
         catch (System.Exception)
         {
             return BadRequest();
-            throw;
         }
     }
 
@@ -87,7 +82,6 @@ public class UserController : ControllerBase
         catch (System.Exception)
         {
             return BadRequest();
-            throw;
         }
     }
 }

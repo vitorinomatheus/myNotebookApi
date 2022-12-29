@@ -1,4 +1,5 @@
 using Domain.Dtos;
+using Domain.Dtos.NotebookDtos;
 using Domain.Entities;
 using Domain.Interfaces.Services;
 using Domain.Interfaces.UtilsInterfaces;
@@ -12,32 +13,50 @@ public class UserService : GenericCrudService<User, IUserRepository>, IUserServi
     private IMapper _mapper;
     private IUserRepository _repository;
     private IHashPasswords _hashPasswords;
+    private INotebookService _notebookService;
 
-    public UserService(IUserRepository repository, IMapper mapper, IHashPasswords hashPasswords)
+    public UserService(
+        IUserRepository repository, 
+        IMapper mapper, 
+        IHashPasswords hashPasswords,
+        INotebookService notebookService
+        )
         : base(repository, mapper)
     {
         _mapper = mapper;
         _repository = repository;
         _hashPasswords = hashPasswords;
+        _notebookService = notebookService;
     }
 
     public async override Task<OutputDto> Insert<InputDto, OutputDto>(InputDto inputDto)
     {
-        var createUser = _mapper.Map<User>(inputDto);
+        try
+        {
+            _repository.BeginTransaction();
 
-        var createdUser = await _repository.Insert(createUser);
+            var createUser = _mapper.Map<User>(inputDto);
 
-        await _hashPasswords.HashPassword(createdUser);
+            var createdUser = await _repository.Insert(createUser);
 
-        /*
-        Criar o caderno;
+            await _hashPasswords.HashPassword(createdUser);
 
-        Chamar a service de criar caderno;
-        */
+            var createNotebookDto = new CreateNotebookDto {
+                UserId = createdUser.Id
+            };
 
-        var createdUserDto = _mapper.Map<OutputDto>(createdUser);
+            await _notebookService.Insert<CreateNotebookDto, CreatedNotebookDto>(createNotebookDto);
 
-        return createdUserDto;
+            _repository.CommitTransaction();
+
+            var createdUserDto = _mapper.Map<OutputDto>(createdUser);
+
+            return createdUserDto;
+        }
+        catch (System.Exception)
+        {
+            _repository.RollbackTransaction();
+            throw;
+        }
     }
-
 }

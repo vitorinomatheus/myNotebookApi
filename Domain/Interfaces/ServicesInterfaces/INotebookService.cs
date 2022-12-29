@@ -1,5 +1,5 @@
 namespace Domain.Interfaces.Services;
 
-public interface INotebookService
+public interface INotebookService : IGenericCrudService
 {
 }

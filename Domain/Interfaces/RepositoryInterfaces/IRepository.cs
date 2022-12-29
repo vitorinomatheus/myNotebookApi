@@ -5,6 +5,12 @@ namespace Domain.Interfaces;
 
 public interface IRepository<T> where T : EntityBase
 {
+    void BeginTransaction();
+
+    void CommitTransaction();
+
+    void RollbackTransaction();
+
     Task<T> GetById(T entity);
 
     Task<IEnumerable<T>> List(T entity);
