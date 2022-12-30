@@ -1,7 +1,9 @@
 using Domain.Dtos;
 using Domain.Dtos.NotebookDtos;
+using Domain.Dtos.PageDtos;
 using Domain.Entities;
 using Domain.Interfaces.Services;
+using Domain.Interfaces.RepositoryInterfaces;
 using Domain.Interfaces.UtilsInterfaces;
 using Domain.Interfaces;
 using AutoMapper;
@@ -14,12 +16,16 @@ public class UserService : GenericCrudService<User, IUserRepository>, IUserServi
     private IUserRepository _repository;
     private IHashPasswords _hashPasswords;
     private INotebookService _notebookService;
+    private IPageService _pageService;
+    private IPasswordSaltRepository _passwordSaltRepository;
 
     public UserService(
         IUserRepository repository, 
         IMapper mapper, 
         IHashPasswords hashPasswords,
-        INotebookService notebookService
+        INotebookService notebookService,
+        IPageService pageService,
+        IPasswordSaltRepository passwordSaltRepository
         )
         : base(repository, mapper)
     {
@@ -27,6 +33,8 @@ public class UserService : GenericCrudService<User, IUserRepository>, IUserServi
         _repository = repository;
         _hashPasswords = hashPasswords;
         _notebookService = notebookService;
+        _pageService = pageService;
+        _passwordSaltRepository = passwordSaltRepository;
     }
 
     public async override Task<OutputDto> Insert<InputDto, OutputDto>(InputDto inputDto)
@@ -52,6 +60,70 @@ public class UserService : GenericCrudService<User, IUserRepository>, IUserServi
             var createdUserDto = _mapper.Map<OutputDto>(createdUser);
 
             return createdUserDto;
+        }
+        catch (System.Exception)
+        {
+            _repository.RollbackTransaction();
+            throw;
+        }
+    }
+
+    public async override Task<OutputDto> Update<InputDto, OutputDto>(InputDto inputDto)
+    {
+        var updateUser = _mapper.Map<User>(inputDto);
+        
+        if(updateUser.Password != null)
+        {
+            await _hashPasswords.HashPassword(updateUser);
+            return _mapper.Map<OutputDto>(updateUser);
+        }
+        else 
+        {
+            return await base.Update<InputDto, OutputDto>(inputDto);
+        }
+    }
+
+    public async override Task<OutputDto> Delete<InputDto, OutputDto>(InputDto inputDto)
+    {
+        var deleteUserDto = inputDto as DeleteUserDto;
+
+        var getNotebookByUserId = new GetNotebookByUserIdDto {
+            UserId = deleteUserDto.Id
+        };
+
+        var notebookUser = await _notebookService.FilteredList<GetNotebookByUserIdDto, FoundNotebookByUserIdDto>(getNotebookByUserId);
+
+        var deleteAllPagesFromNotebookDto = new DeleteAllPagesFromNotebookDto {
+            NotebookId = notebookUser.First().Id
+        };
+
+        var deleteNotebook = new DeleteNotebookDto {
+            Id = notebookUser.First().Id
+        };
+
+        var deleteSalt = new PasswordSalt {
+            UserId = deleteUserDto.Id
+        };
+
+        try
+        {
+            _repository.BeginTransaction();
+
+            var deletePagesNotebook = await _pageService.DeleteAllPagesFromNotebook(deleteAllPagesFromNotebookDto);
+            
+            await _passwordSaltRepository.Delete(deleteSalt);
+
+            await _notebookService.Delete<DeleteNotebookDto, DeletedNotebookDto>(deleteNotebook);
+            
+            var deleteUser = _mapper.Map<User>(inputDto);
+
+            var deletedUser = await _repository.Delete(deleteUser);
+
+            var deletedDto = _mapper.Map<OutputDto>(deletedUser);
+
+            _repository.CommitTransaction();
+
+            return deletedDto;
         }
         catch (System.Exception)
         {

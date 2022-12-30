@@ -1,5 +1,6 @@
 using Application.Services;
 using Domain.Interfaces;
+using Domain.Interfaces.RepositoryInterfaces;
 using Domain.Interfaces.UtilsInterfaces;
 using Domain.Interfaces.Services;
 using Infra.Repositories;
@@ -30,7 +31,7 @@ builder.Services.AddScoped<IPageRepository, PageRepository>();
 builder.Services.AddScoped<INotebookRepository, NotebookRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<UserRepository>();
-builder.Services.AddScoped<PasswordSaltRepository>();
+builder.Services.AddScoped<IPasswordSaltRepository, PasswordSaltRepository>();
 
 // Others
 builder.Services.AddScoped<IHashPasswords, HashPasswords>();

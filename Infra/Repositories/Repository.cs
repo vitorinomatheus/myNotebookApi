@@ -48,12 +48,15 @@ public class Repository<T> : IRepository<T>
 
     public async virtual Task<IEnumerable<T>> List(Expression<Func<T, bool>> predicate)
     {
-        return await _dbContext.Set<T>()
-                .Where(predicate)
-                .ToListAsync();
+        var listedEntities = await _dbContext.Set<T>()
+            .AsNoTracking()
+            .Where(predicate)
+            .ToListAsync();
+
+        return listedEntities;
     }
 
-    public async Task<T> Insert(T entity)
+    public async virtual Task<T> Insert(T entity)
     {
         var insertedEntity = await _dbContext.Set<T>().AddAsync(entity);
 
@@ -62,7 +65,7 @@ public class Repository<T> : IRepository<T>
         return insertedEntity.Entity;
     }
 
-    public async Task<T> Update(T entity)
+    public async virtual Task<T> Update(T entity)
     {
         var foundEntity = await _dbContext.Set<T>().FindAsync(entity.Id);
 
@@ -85,7 +88,7 @@ public class Repository<T> : IRepository<T>
         return updatedEntity;
     }
 
-    public async Task<T> Delete(T entity)
+    public async virtual Task<T> Delete(T entity)
     {
         var deletedEntity = _dbContext.Set<T>().Remove(entity);
 
@@ -94,7 +97,7 @@ public class Repository<T> : IRepository<T>
         return deletedEntity.Entity;
     }
 
-    public Expression<Func<T, bool>> GetFilterPredicate(T entity)
+    public virtual Expression<Func<T, bool>> GetFilterPredicate(T entity)
     {
         var props = entity.GetType().GetProperties();
 
