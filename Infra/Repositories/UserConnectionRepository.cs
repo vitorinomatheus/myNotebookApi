@@ -20,24 +20,9 @@ public class UserConnectionRepository : Repository<UserConnection>, IUserConnect
     {
         Expression<Func<UserConnection, bool>> expression = default;
 
-        var queriedFields = typeof(UserConnection).GetProperties();
+        expression = s => s.ConnectionAddressee == userId || s.ConnectionRequester == userId;
 
-        foreach(var prop in queriedFields)
-        {
-            if(prop.Name == nameof(UserConnection.ConnectionAddressee) || prop.Name ==  nameof(UserConnection.ConnectionRequester))
-            {
-                var parameter = Expression.Parameter(typeof(UserConnection));
-                var left = Expression.Property(parameter, prop.Name);
-                Expression<Func<object>> right = () => userId;
-                var convertedRight = Expression.Convert(right.Body, userId.GetType());
-                var body = Expression.Equal(left, convertedRight);
-                var predicate = Expression.Lambda<Func<UserConnection, bool>>(body, new ParameterExpression[] { parameter });
-
-                expression = predicate;
-            }
-        }
-
-        return expression;
+        return expression;        
     }
 
     public async Task DeleteAllConnectionsFromUser(DeleteAllConnectionsFromUserDto deleteAllConnectionsFromUserDto)

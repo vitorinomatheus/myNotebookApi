@@ -8,4 +8,5 @@ public interface IUserConnectionService: IGenericCrudService
 {
     Task<DeletedAllConnectionsFromUserDto> DeleteAllConnectionsFromUser(DeleteAllConnectionsFromUserDto deleteAllConnectionsFromUserDto);
     Task<RequestedUserConnectionDto> RequestUserConnection(RequestUserConnectionDto requestUserConnectionDto);
+    Task<StatusUserConnectionDto> ReplyToUserConnectionRequest(ReplyUserConnectionDto replyUserConnectionDto);
 }

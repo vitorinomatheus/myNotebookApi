@@ -15,12 +15,40 @@ public class UserConnectionController : ControllerBase
         _userConnectionService = userConnectionService;
     }
 
+    [HttpGet]
+    public async Task<IActionResult> ListUserConnections([FromQuery] ListUserConnectionDto listUserConnectionDto)
+    {
+        try
+        {
+            return Ok(await _userConnectionService.FilteredList<ListUserConnectionDto, ListedUserConnectionDto>(listUserConnectionDto));
+        }
+        catch (System.Exception)
+        {
+            return BadRequest();
+        }
+    }
+
     [HttpPost]
     public async Task<IActionResult> RequestConnection([FromBody] RequestUserConnectionDto requestUserConnectionDto)
     {
         try
         {
             return Ok(await _userConnectionService.RequestUserConnection(requestUserConnectionDto));
+        }
+        catch (System.Exception)
+        {
+            return BadRequest();
+        }
+    }
+
+    [HttpPut]
+    [Route("{Id}/reply")]
+    public async Task<IActionResult> ReplyToUserConnectionRequest([FromRoute] int Id, [FromBody] ReplyUserConnectionDto replyUserConnectionDto)
+    {
+        replyUserConnectionDto.Id = Id;
+        try
+        {
+            return Ok(await _userConnectionService.ReplyToUserConnectionRequest(replyUserConnectionDto));
         }
         catch (System.Exception)
         {

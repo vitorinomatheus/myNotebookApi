@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "zCN/sFHdxpY5wIyCo/vuDEBH2Y67aUtCCDdERlfPNIq5jiYgnB9IWzQYsoEqIkiaWzy/gFuorsb9QahHpCt7Nw==",
+  "dgSpecHash": "+Jez3SjXF0yaT1Dft4q7IGQmi6rDbSlEASdWmRdfa0mMR6UYvKe7Lm0BZVHzebAB+BJdQGhVocT0ydXe0RPNug==",
   "success": true,
   "projectFilePath": "C:\\Users\\Matheus\\Desktop\\Caderno\\api\\Api\\Api.csproj",
   "expectedPackageFiles": [
@@ -34,6 +34,7 @@
     "C:\\Users\\Matheus\\.nuget\\packages\\system.configuration.configurationmanager\\4.4.1\\system.configuration.configurationmanager.4.4.1.nupkg.sha512",
     "C:\\Users\\Matheus\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
     "C:\\Users\\Matheus\\.nuget\\packages\\system.drawing.common\\4.7.0\\system.drawing.common.4.7.0.nupkg.sha512",
+    "C:\\Users\\Matheus\\.nuget\\packages\\system.linq.dynamic.core\\1.2.24\\system.linq.dynamic.core.1.2.24.nupkg.sha512",
     "C:\\Users\\Matheus\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
     "C:\\Users\\Matheus\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "C:\\Users\\Matheus\\.nuget\\packages\\system.security.accesscontrol\\4.7.0\\system.security.accesscontrol.4.7.0.nupkg.sha512",

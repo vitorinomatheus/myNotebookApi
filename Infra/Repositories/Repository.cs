@@ -73,7 +73,9 @@ public class Repository<T> : IRepository<T>
 
         foreach(var prop in props)
         {
-            if(prop.GetValue(entity) != null)
+            var propValue = prop.GetValue(entity);
+            if((propValue is not int && propValue != null) 
+            || (propValue is int && (int)propValue != 0))
             {
                 foundEntity.GetType()
                     .GetProperty(prop.Name)
