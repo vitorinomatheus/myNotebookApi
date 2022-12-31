@@ -1,6 +1,7 @@
 using Domain.Dtos;
 using Domain.Dtos.NotebookDtos;
 using Domain.Dtos.PageDtos;
+using Domain.Dtos.UserConnectionDtos;
 using Domain.Entities;
 using Domain.Interfaces.Services;
 using Domain.Interfaces.RepositoryInterfaces;
@@ -17,6 +18,7 @@ public class UserService : GenericCrudService<User, IUserRepository>, IUserServi
     private IHashPasswords _hashPasswords;
     private INotebookService _notebookService;
     private IPageService _pageService;
+    private IUserConnectionService _userConnectionService;
     private IPasswordSaltRepository _passwordSaltRepository;
 
     public UserService(
@@ -25,6 +27,7 @@ public class UserService : GenericCrudService<User, IUserRepository>, IUserServi
         IHashPasswords hashPasswords,
         INotebookService notebookService,
         IPageService pageService,
+        IUserConnectionService userConnectionService,
         IPasswordSaltRepository passwordSaltRepository
         )
         : base(repository, mapper)
@@ -34,6 +37,7 @@ public class UserService : GenericCrudService<User, IUserRepository>, IUserServi
         _hashPasswords = hashPasswords;
         _notebookService = notebookService;
         _pageService = pageService;
+        _userConnectionService =  userConnectionService;
         _passwordSaltRepository = passwordSaltRepository;
     }
 
@@ -97,6 +101,10 @@ public class UserService : GenericCrudService<User, IUserRepository>, IUserServi
             NotebookId = notebookUser.First().Id
         };
 
+        var deleteAllConnectionsFromUserDto = new DeleteAllConnectionsFromUserDto {
+            UserId = deleteUserDto.Id
+        };
+
         var deleteNotebook = new DeleteNotebookDto {
             Id = notebookUser.First().Id
         };
@@ -109,8 +117,10 @@ public class UserService : GenericCrudService<User, IUserRepository>, IUserServi
         {
             _repository.BeginTransaction();
 
-            var deletePagesNotebook = await _pageService.DeleteAllPagesFromNotebook(deleteAllPagesFromNotebookDto);
+            await _pageService.DeleteAllPagesFromNotebook(deleteAllPagesFromNotebookDto);
             
+            await _userConnectionService.DeleteAllConnectionsFromUser(deleteAllConnectionsFromUserDto);
+
             await _passwordSaltRepository.Delete(deleteSalt);
 
             await _notebookService.Delete<DeleteNotebookDto, DeletedNotebookDto>(deleteNotebook);

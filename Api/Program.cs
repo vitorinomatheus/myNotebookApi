@@ -25,6 +25,7 @@ var mapper = config.CreateMapper();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IPageService, PageService>();
 builder.Services.AddScoped<INotebookService, NotebookService>();
+builder.Services.AddScoped<IUserConnectionService, UserConnectionService>();
 
 // Repositories
 builder.Services.AddScoped<IPageRepository, PageRepository>();
@@ -32,6 +33,7 @@ builder.Services.AddScoped<INotebookRepository, NotebookRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<UserRepository>();
 builder.Services.AddScoped<IPasswordSaltRepository, PasswordSaltRepository>();
+builder.Services.AddScoped<IUserConnectionRepository, UserConnectionRepository>();
 
 // Others
 builder.Services.AddScoped<IHashPasswords, HashPasswords>();
