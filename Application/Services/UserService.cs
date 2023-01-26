@@ -49,6 +49,13 @@ public class UserService : GenericCrudService<User, IUserRepository>, IUserServi
 
             var createUser = _mapper.Map<User>(inputDto);
 
+            var repeatedLoginUser = await _repository.GetByLogin(createUser);
+
+            if(repeatedLoginUser != null)
+            {
+                throw new System.Exception();
+            }
+
             var createdUser = await _repository.Insert(createUser);
 
             await _hashPasswords.HashPassword(createdUser);
@@ -139,6 +146,27 @@ public class UserService : GenericCrudService<User, IUserRepository>, IUserServi
         {
             _repository.RollbackTransaction();
             throw;
+        }
+    }
+
+    public async Task<LoggedinUserDto> LoginUser(LoginUserDto loginUserDto)
+    {
+        var verifyUserLogin = _mapper.Map<User>(loginUserDto);
+
+        var foundUser = await _repository.GetByLogin(verifyUserLogin);
+
+        verifyUserLogin.Id = foundUser.Id;
+
+        var verifiedPassowrd = await _hashPasswords.VerifyPassword(verifyUserLogin);
+
+        if(verifiedPassowrd == true && foundUser != null)
+        {
+            var loggedInUserDto = _mapper.Map<LoggedinUserDto>(foundUser);
+            return loggedInUserDto;
+        }
+        else 
+        {
+            throw new System.Exception();
         }
     }
 }

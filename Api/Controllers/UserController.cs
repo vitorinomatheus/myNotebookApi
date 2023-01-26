@@ -84,4 +84,18 @@ public class UserController : ControllerBase
             return BadRequest();
         }
     }
+
+    [HttpPost]
+    [Route("login")]
+    public async Task<IActionResult> Login([FromBody] LoginUserDto loginUserDto)
+    {
+        try
+        {
+            return Ok(await _userService.LoginUser(loginUserDto));
+        }
+        catch (System.Exception)
+        {
+            return BadRequest();
+        }
+    }
 }
